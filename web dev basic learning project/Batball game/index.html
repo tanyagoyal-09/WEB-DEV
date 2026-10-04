@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bat Ball Stump Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 class="hello">Bat Ball Stump Game 🏏</h1>
+
+    <!-- Choices -->
+    <div class="choices">
+        <img src="bat.jpg" alt="Bat" class="choice-img" onclick="playGame('Bat')">
+        <img src="ball.jpg" alt="Ball" class="choice-img" onclick="playGame('Ball')">
+        <img src="stump.jpg" alt="Stump" class="choice-img" onclick="playGame('Stump')">
+    </div>
+
+    <!-- Result -->
+    <div class="result">
+        <p id="userMove">You chose: -</p>
+        <p id="computerMove">Computer chose: -</p>
+        <h2 id="gameResult">Make your move!</h2>
+    </div>
+
+    <!-- Score -->
+    <div class="score">
+        <h3>Score 🔢</h3>
+        <p>You: <span id="userScore">0</span></p>
+        <p>Computer: <span id="computerScore">0</span></p>
+        <p>Tie: <span id="tieScore">0</span></p>
+    </div>
+
+    <button class="helo reset-btn" onclick="resetScore()">Reset Score 🔄</button>
+
+<script>
+    // Load score from localStorage
+    let score = JSON.parse(localStorage.getItem('score')) || {
+        user: 0,
+        computer: 0,
+        tie: 0
+    };
+
+    updateScore();
+
+    function playGame(userChoice) {
+
+        let randomNumber = Math.random() * 3;
+        let computerChoice;
+
+        if (randomNumber <= 1) computerChoice = 'Bat';
+        else if (randomNumber <= 2) computerChoice = 'Ball';
+        else computerChoice = 'Stump';
+
+        let resultMessage;
+
+        if (userChoice === computerChoice) {
+            resultMessage = "It's a Tie 😐";
+            score.tie++;
+        } 
+        else if (
+            (userChoice === 'Bat' && computerChoice === 'Ball') ||
+            (userChoice === 'Ball' && computerChoice === 'Stump') ||
+            (userChoice === 'Stump' && computerChoice === 'Bat')
+        ) {
+            resultMessage = "You Win 🎉";
+            score.user++;
+        } 
+        else {
+            resultMessage = "Computer Wins 💻";
+            score.computer++;
+        }
+
+        localStorage.setItem('score', JSON.stringify(score));
+
+        document.getElementById("userMove").innerText = `You chose: ${userChoice}`;
+        document.getElementById("computerMove").innerText = `Computer chose: ${computerChoice}`;
+        document.getElementById("gameResult").innerText = resultMessage;
+
+        updateScore();
+    }
+
+    function updateScore() {
+        document.getElementById("userScore").innerText = score.user;
+        document.getElementById("computerScore").innerText = score.computer;
+        document.getElementById("tieScore").innerText = score.tie;
+    }
+
+    function resetScore() {
+        score = { user: 0, computer: 0, tie: 0 };
+        localStorage.removeItem('score');
+
+        document.getElementById("userMove").innerText = "You chose: -";
+        document.getElementById("computerMove").innerText = "Computer chose: -";
+        document.getElementById("gameResult").innerText = "Make your move!";
+
+        updateScore();
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Demo</title>
+</head>
+<body>
+    <script>
+        //json demo
+let product ={
+    name:'T-shirt',
+    price: 200,
+    rating:{
+        stars:4.5,
+        noOfReview: 567,
+    },
+};
+console.log(typeof product);
+console.log(product);
+let str = JSON.stringify(product);
+console.log(typeof str);
+console.log(str);
+
+let obj = JSON.parse(str);
+console.log(typeof obj);
+console.log(obj);
+
+
+//local storage demo
+
+// let product ={
+//     name:'T-shirt',
+//     price: 200,
+//     rating:{
+//         stars:4.5,
+//         noOfReview: 567,
+//     },
+// };
+
+
+// // localStorage.setItem('Name','John');
+// // localStorage.setItem('Age',30);
+// // localStorage.setItem('City','New York');
+
+// // console.log(localStorage.getItem('Name'));
+// localStorage.setItem('product',JSON.stringify(product));
+// console.log(localStorage.getItem('product'));
+
+    </script>
+</body>
+</html>
+<!--json file is used to store data 
+in a structured format. It is commonly used for ff
+data exchange between a server and a
+ web application, as well as for configuration
+  files. JSON stands for JavaScript Object Notation 
+  and is easy to read and write for both humans and machines. 
+  It consists of key-value pairs, where the keys are strings
+   and the values can be strings, numbers, arrays, or other JSON objects.
+    JSON files typically have a .json extension and can be parsed using
+     various programming languages, including JavaScript, Python, and Java. 
+     json.parse helps to convert a JSON string into a JavaScript object.
+     and json.stringify helps to convert a JavaScript object into a JSON string.
+     json is a data format , js obj is a ds-->
+     
+
+
+     <!--local storage is a web storage API that allows you to store data in the browser. It provides a way to store key-value pairs in a web browser with no expiration date. 
+ The data stored in local storage is persistent and remains even after the browser is closed. Local storage is commonly used to store user preferences, session data, or any other information that needs to be retained across browser sessions. It can be accessed and manipulated using JavaScript, and the data is stored as strings. Local storage is a convenient way to store data on the client-side without the need for server-side storage.-->   

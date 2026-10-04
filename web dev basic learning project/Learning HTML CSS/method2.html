@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Date time method
+        </title>
+        <body>
+            <h1 id="res"></h1>
+<button onclick="getDate()">Date</button>
+<button onclick="year()">Year</button>
+<button onclick="month()">Month</button>
+        </body>
+        <script type ="text/javascript">
+            var date = new Date();
+            function getDate(){
+                document.getElementById("res").innerText= date;
+            } 
+          
+            function year(){
+
+                document.getElementById("res").innerText= date.getFullYear();
+            }
+ function month(){
+  
+    document.getElementById("res").innerText =date.getMonth();
+ }
+
+        </script>
+    </head>
+</html>

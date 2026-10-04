@@ -1,0 +1,4 @@
+In todo list we use the concept of the array and 
+loop where array helps to store the value one by
+ one that is entered by the user on the other
+  hand loops helps in continous storing of any task 

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Tag name </title>
+    </head>
+    <body>
+        <input type="" name="u_name">
+        <button onclick="getName()"> submit</button>
+        <h1></h1>
+
+    </body>
+    <script type="text/javascript">
+        function getName(){
+            var uName = document.getElementsByName("u_name")[0].value;
+            document.getElementsByTagName("h1")[0].innerHTML = uName;
+        }
+
+    </script>
+</html>

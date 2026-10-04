@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Exercise</title>
+<style>
+#mybutton{
+    height: 50px;
+    width: 50px;
+    font-size: 25px;
+    border: none;
+    border-radius: 50%;
+}
+.js-odd{
+    background-color: red;
+
+}
+.js-even
+{
+    background-color: green;
+}
+</style>
+    
+</head>
+<body>
+    <h3>
+        <div id="greetings"></div>
+       </h3>
+       <button id="mybutton" onclick="buttonPressed()">0</button>
+
+    <script>
+ let count = 0;
+ function buttonPressed(){
+    count++;
+    updatebutton();
+ }
+    function updatebutton(){
+        let button = document.querySelector("#mybutton");
+        if(count % 2 == 0){
+            button.classList.add("js-even");
+            button.classList.remove("js-odd");
+        }
+        else{
+            button.classList.add("js-odd");
+            button.classList.remove("js-even");
+        }
+        button.innerHTML = count;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function hello(wtf='dear!'){
+
+        
+
+ let date= new Date();
+//  let hours = date.getHours();
+let hours =  10;
+let heading = document.querySelector("#greetings");
+console.log(hours);
+if(hours > 5 && hours < 12){
+    heading.innerHTML = `Good Morning ${wtf}`;
+}
+else if(hours >= 12 && hours < 17){
+    heading.innerHTML = `Good Afternoon ${wtf}`;
+}
+else if (hours >= 17 && hours < 20){
+    heading.innerHTML = `Good Evening ${wtf}`;
+}
+else{
+    heading.innerHTML = `Good Night ${wtf}`;
+}
+        }
+        hello();
+
+    </script>
+</body>
+</html>

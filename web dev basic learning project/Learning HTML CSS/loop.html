@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>loops</title>
+    </head>
+    <body></body>
+    <script type="text/javascript">
+   /*     for(var count=0;count<=10;count++){
+            document.write(count  + "<br/>");
+        }
+       var count=0;
+       while(count!=10)
+       {
+        
+        document.write(count + "<br/>");
+        count=count+1;
+       }
+
+  >  forEach loop is used to get data from js array or object
+  >  the method calls a fun once for each element in an array , in order.
+*/
+/*var cars = ["car1","car2","car3","car4","car5"];
+cars.forEach(car);
+ function car(item){
+    document.write(item+"<br>");
+ }*/
+var cars = ["car1","car2","car3","car4","car5"];
+cars.forEach(car);
+ /*function car(item,index){
+    document.write( index + "=>" + item +"<br>");
+ }*/
+function car(item,index,array){
+    array[index]= item + "3";
+}
+cars.forEach(after);
+function after(item,index){
+    document.write(index+"=>" + item + "<br>");
+
+}
+
+    </script>
+</html>

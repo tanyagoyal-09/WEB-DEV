@@ -1,0 +1,167 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* ===== HEADING ===== */
+.hello {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    animation: fadeDown 1s ease;
+}
+
+/* ===== CHOICES (IMAGES) ===== */
+.choices {
+    display: flex;
+    gap: 30px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.choice-img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+    background: white;
+    transition: all 0.35s ease;
+}
+
+/* Hover effect */
+.choice-img:hover {
+    transform: scale(1.15) rotate(4deg);
+    border-color: #00ffcc;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Click effect */
+.choice-img:active {
+    transform: scale(0.95);
+}
+
+/* ===== RESULT CARD ===== */
+.result {
+    margin-top: 25px;
+    padding: 20px 30px;
+    width: 340px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: slideUp 0.8s ease;
+}
+
+.result p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+}
+
+#gameResult {
+    margin-top: 12px;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+/* ===== SCORE BOARD ===== */
+.score {
+    margin-top: 20px;
+    padding: 18px 30px;
+    width: 340px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.score h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #00ffcc;
+}
+
+.score p {
+    font-size: 1.15rem;
+    margin: 6px 0;
+}
+
+/* ===== RESET BUTTON ===== */
+.helo {
+    margin-top: 25px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #00ffcc, #00c6ff);
+    color: #003344;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.helo:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 255, 204, 0.4);
+}
+
+.helo:active {
+    transform: scale(0.95);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .hello {
+        font-size: 2.2rem;
+    }
+
+    .choice-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .result,
+    .score {
+        width: 90%;
+    }
+}
