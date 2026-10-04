@@ -1,0 +1,15 @@
+.hello{
+    color: red;
+    text-align: center;
+    margin:auto;
+    block-size: 60px;
+}
+.helo{
+    text-align: center;
+    display: block;
+    block-size: 40px;
+    margin: 10px auto;
+}
+body{
+    background-color: yellowgreen;
+}

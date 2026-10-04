@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body style="background-color:lightblue;">
+
+    <div id="calculator">
+        <input type="text" id="display">
+       <div class="button-container">
+         <button class="button">C</button>
+        <button class="button">1</button>
+        <button class="button">2</button>
+        <button class="button">3</button>
+        <button class="button">4</button>   
+        <button class="button">5</button>
+        <button class="button">6</button>
+
+        <button class="button">7</button>
+        <button class="button">8</button>   
+        <button class="button">9</button>
+        <button class="button">/</button>
+        <button class="button">+</button>
+        <button class="button">*</button>
+        <button class="button">-</button>
+        <button class="button">=</button>
+        <button class="button">0</button>
+        <button class="button">.</button>
+
+       </div>
+    </div>
+    <script>
+        let currentDisplay= '';
+        const display = document.getElementById('display');
+        const buttons = document.querySelectorAll('.button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                if(button.textContent === '='){
+                    try{
+                        currentDisplay = eval(currentDisplay);
+                    }catch(error){
+                        currentDisplay = 'Error';
+                    }
+                }else if(button.textContent === 'C'){
+                    currentDisplay = '';
+                }else{
+                    currentDisplay += button.textContent;
+                }
+                display.value = currentDisplay;
+            });
+        });
+    </script>
+</body>
+</html>
